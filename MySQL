@@ -1,0 +1,22 @@
+DROP DATABASE IF EXISTS banco_aula;
+
+CREATE DATABASE banco_aula;
+USE banco_aula;
+
+DROP TABLE IF EXISTS estado;
+
+CREATE TABLE estado(
+id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
+,nome VARCHAR(200) NOT NULL UNIQUE  -- CONSTARINT INLINE
+,sigla CHAR (2) NOT NULL UNIQUE
+,ativo CHAR(1) NOT NULL DEFAULT 'S'
+,data_cadastro DATETIME NOT NULL
+,CHECK (ativo IN ('S', 'N') )  -- CONSTRAINT OUT OF LINE
+,CONSTRAINT coluna_ativo_deve_ser_S_ou_N CHECK (ativo IN ('S', 'N') )  -- CONSTRAINT OUT OF LINE
+);
+
+INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (1,'MATO GROSSO', 'MT','S','2022-09-05 ');
+INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (2,'MATO GROSSO', 'MT','S','2022-09-05 ');
+INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (3,'SÃO PAULO', 'SP', 'A' ,'2022-09-05 ');
+
+SELECT id,nome,sigla,ativo,data_cadastro FROM estado;
