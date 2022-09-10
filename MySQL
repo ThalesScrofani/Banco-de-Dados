@@ -16,7 +16,7 @@ id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
 );
 
 INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (1,'MATO GROSSO', 'MT','S','2022-09-05 ');
-INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (2,'MATO GROSSO', 'MT','S','2022-09-05 ');
+INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (2,'PARANÁ', 'PR','S','2022-09-05 ');
 INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (3,'SÃO PAULO', 'SP', 'A' ,'2022-09-05 ');
 
 SELECT id,nome,sigla,ativo,data_cadastro FROM estado;
@@ -31,3 +31,25 @@ id INT NOT NULL AUTO_INCREMENT
 ,CONSTRAINT fk_cidade_estado FOREIGN KEY (estado_id) REFERENCES estado (id)
 ,CONSTRAINT cidade_unica UNIQUE(nome, estado_id)
 );
+
+
+INSERT INTO cidade (nome, estado_id) VALUES ('BARRA DOS GARÇAS',1);
+INSERT INTO cidade (nome, estado_id) VALUES ('PARANAVAÍ',2);
+INSERT INTO cidade (nome, estado_id) VALUES ('BAURU',3);
+
+SELECT * FROM cidade;
+SELECT 	
+	cidade.id 'ID CIDADE'
+  ,cidade.nome 'NOME CIDADE'
+  ,estado.sigla 'SIGLA ESTADO'
+
+SELECT 	*
+FROM estado, cidade;
+
+SELECT 
+	cidade.id 'ID CIDADE'
+    ,cidade.nome 'NOME CIDADE'
+    ,estado.sigla 'SIGLA ESTADO'
+FROM estado
+JOIN cidade ON cidade.estado_id = estado.id 
+WHERE estado.nome = 'PARANÁ';
