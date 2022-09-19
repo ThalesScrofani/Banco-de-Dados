@@ -1,0 +1,9 @@
+O que é e para que serve o JOIN ? Quando devemos utilizar ?
+Uma cláusula join da SQL - correspondente a uma operação de junção em álgebra relacional - combina colunas de uma ou mais tabelas em um banco de dados relacional.
+Ela cria um conjunto que pode ser salvo como uma tabela ou usado da forma como está.
+
+Sintaxe e quais são os passos para ENTENDER e Dominar o JOIN.
+
+# Preparar o material de "uma única tela" que será compartilhado.
+# A equipe terá 5 minutos para explicar o material.
+# Compartilhar no GitHub.
