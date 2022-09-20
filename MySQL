@@ -53,3 +53,56 @@ SELECT
 FROM estado
 JOIN cidade ON cidade.estado_id = estado.id 
 WHERE estado.nome = 'PARANÁ';
+
+-------------------------------------------------
+
+ATIVIDADE SQL - AULA 7
+EXERCICIOS INSERT 
+
+ATIVIDADE 6
+INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES ('ACRE','AC','S','2022-09-03');
+INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES ('MACAPA','AP','S','2022-09-03');
+
+ATIVIDADE 7
+INSERT INTO estado (nome,sigla) VALUES ('AMAZONAS','AM'); 
+INSERT INTO estado (nome,sigla) VALUES ('BAHIA','BA'); 
+
+EXERCICIOS DELETE
+
+ATIVIDADE 11
+UPDATE cidade SET ativo = 'N';
+
+ATIVIDADE 12
+DELETE FROM cidade WHERE nome = 'BAURU';
+
+EXERCICIOS SELECT
+
+ATIVIDADE 6
+SELECT * FROM cidade;
+
+ATIVIDADE 7
+SELECT nome FROM cidade;
+
+ATIVIDADE SQL - AULA 8
+EXERCICIO 1
+O comando join é utilizado para realiza junçoes entre tabelas, ele é utilizado para podermos comparar tabelas que possuam dados semelhantes
+
+EXERCICIO 2
+A Sintaxe do comando JOIN varia de acordo com as versões do SQL, podendo ser:
+
+SELECT *
+FROM estado, cidade;
+
+Ou podendo ser também
+
+SELECT *
+FROM estado
+JOIN cidade;
+
+A diferença entre letras maiusculas ou minusculas fazem sim a diferença a depender do padrão escolhido a se seguir podendo variar de empresa pra empresa.
+
+EXERCICIO 4
+É essencial que durante o uso do comando JOIN as tabelas possuam alguma corelação pois de outra forma os dados comparados não farão sentido algum.
+
+EXERCICIO 5
+Sim existem mais de uma maneira, sendo 5 delas especificadas sendo:INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN e CROSS JOIN, nenhuma delas possui eficiencia maior pois executam funçoes diferente.
